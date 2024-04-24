@@ -3,7 +3,6 @@
 **########## Problem 6-1 ##########**
 
 To modify the trigger frequency, we can change the **htim1.Init.Period** term in line 156 of **main_6-1.cpp** file.
-
 In our **main_6-1.cpp**, we change this value from 1000 - 1 to 10000 - 1.
 
 To modify the sampling time of ADC, we can change the **sConfig.SamplingTime** term in line 110 of **main_6-1.cpp** file.
