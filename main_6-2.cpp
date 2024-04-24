@@ -10,7 +10,7 @@ DMA_HandleTypeDef hdma1;
 static events::EventQueue event_queue(32 * EVENTS_EVENT_SIZE);
 
 #define SAMPLE_BUFFER_SIZE  256
-uint32_t sample_buffer[SAMPLE_BUFFER_SIZE];
+uint16_t sample_buffer[SAMPLE_BUFFER_SIZE];
 
 
 void Error_Handler()
