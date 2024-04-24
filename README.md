@@ -9,9 +9,9 @@ Note that ADC_SAMPLETIME_XCYCLES_5 stands for "Sampling time X.5 ADC clock cycle
 **#################################**  
 
 **########## Problem 6-2 ##########**  
-
+Not yet completed, still working.
 **#################################**  
 
 **########## Problem 6-3 ##########**  
-
+Not yet completed, still working.
 **#################################**  
