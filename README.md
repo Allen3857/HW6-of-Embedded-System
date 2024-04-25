@@ -17,7 +17,7 @@ For the second todo in function "HAL_ADC_ConvHalfCpltCallback", we just write "e
 
 For the last todo in function "HAL_ADC_Start_DMA", just write "&hadc1, (uint32_t *)sample_buffer, SAMPLE_BUFFER_SIZE".  
 
-Since 1 / (80M / 4000) * 1000 * 128 = 6.4, the data will be printed out every 6.4 seconds.
+Since 1 / (80M / 4000 (prescaler)) * 1000 * 128 = 6.4, the data will be printed out every 6.4 seconds.  
 #########################################################  
 
 #################### **Problem 6-3** ####################  
