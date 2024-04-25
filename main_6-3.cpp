@@ -18,6 +18,10 @@ static size_t SKIP_FIRST_EVENTS = 50;
 static size_t half_transfer_events = 0;
 static size_t transfer_complete_events = 0;
 
+// Define GPIO pins for toggling output voltage
+static DigitalOut pin1(D2);
+static DigitalOut pin2(D3);
+
 void start_recording() {
     int32_t ret;
     uint32_t state;
@@ -54,11 +58,6 @@ void target_audio_buffer_full() {
     ev_queue.call(start_recording);
 }
 
-/**
-* @brief  Half Transfer user callback, called by BSP functions.
-* @param  None
-* @retval None
-*/
 void BSP_AUDIO_IN_HalfTransfer_CallBack(uint32_t Instance) {
     half_transfer_events++;
     if (half_transfer_events < SKIP_FIRST_EVENTS) return;
@@ -78,13 +77,11 @@ void BSP_AUDIO_IN_HalfTransfer_CallBack(uint32_t Instance) {
         ev_queue.call(&target_audio_buffer_full);
         return;
     }
+
+    // Toggle pin1's output voltage
+    pin1 = !pin1;
 }
 
-/**
-* @brief  Transfer Complete user callback, called by BSP functions.
-* @param  None
-* @retval None
-*/
 void BSP_AUDIO_IN_TransferComplete_CallBack(uint32_t Instance) {
     transfer_complete_events++;
     if (transfer_complete_events < SKIP_FIRST_EVENTS) return;
@@ -105,13 +102,11 @@ void BSP_AUDIO_IN_TransferComplete_CallBack(uint32_t Instance) {
         ev_queue.call(&target_audio_buffer_full);
         return;
     }
+
+    // Toggle pin2's output voltage
+    pin2 = !pin2;
 }
 
-/**
-  * @brief  Manages the BSP audio in error event.
-  * @param  Instance Audio in instance.
-  * @retval None.
-  */
 void BSP_AUDIO_IN_Error_CallBack(uint32_t Instance) {
     printf("BSP_AUDIO_IN_Error_CallBack\n");
 }
@@ -120,8 +115,6 @@ void print_stats() {
     printf("Half %lu, Complete %lu, IX %lu\n", half_transfer_events, transfer_complete_events,
         TARGET_AUDIO_BUFFER_IX);
 }
-
-
 
 int main() {
     printf("Hello from the B-L475E-IOT01A microphone demo\n");
