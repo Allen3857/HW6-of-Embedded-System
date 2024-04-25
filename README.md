@@ -3,7 +3,7 @@
 ########################################## **Problem 6-1** ###########################################  
 To modify the trigger frequency, we can change the "htim1.Init.Period" term in line 156 of main_6-1.cpp file. In our main_6-1.cpp, we change this value from 1000 - 1 to 10000 - 1.  
 
-The original trigger frequency is 1 / (80M / 4000 (prescaler)) * 1000 = 0.05s, so the data will be printed out every 0.05s. The new trigger frequency is 1 / (80M / 4000 (prescaler)) * 10000 = 0.5s, so the data will be printed out every 0.5s.  
+The original trigger frequency is 1 / (80M / 4000 (prescaler)) * 1000 = 0.05, so the data will be printed out every 0.05 second. The new trigger frequency is 1 / (80M / 4000 (prescaler)) * 10000 = 0.5, so the data will be printed out every 0.5 second.  
 
 To modify the sampling time of ADC, we can change the "sConfig.SamplingTime" term in line 110 of main_6-1.cpp file. In our main_6-1.cpp, we change this value from ADC_SAMPLETIME_2CYCLES_5 to ADC_SAMPLETIME_640CYCLES_5.  
 
