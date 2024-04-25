@@ -11,9 +11,9 @@ Note that ADC_SAMPLETIME_XCYCLES_5 stands for "Sampling time X.5 ADC clock cycle
 ###################################################  
   
 #################### **Problem 6-2** ####################  
-For the first todo in function "HAL_ADC_ConvCpltCallback", we just write "event_queue.call(Upper_Printed);". The Upper_Printed function will print the data in buffer[128:255] when this part is fulled.  
+For the first todo in function "HAL_ADC_ConvCpltCallback", we just write "event_queue.call(Upper_Printed);". The Upper_Printed function will print the data in buffer[128:255] when this part is filled.  
 
-For the second todo in function "HAL_ADC_ConvHalfCpltCallback", we just write "event_queue.call(Lower_Printed);". The Lower_Printed function will print the data in buffer[0:127] when this part is fulled.  
+For the second todo in function "HAL_ADC_ConvHalfCpltCallback", we just write "event_queue.call(Lower_Printed);". The Lower_Printed function will print the data in buffer[0:127] when this part is filled.  
 
 For the last todo in function "HAL_ADC_Start_DMA", just write "&hadc1, (uint32_t *)sample_buffer, SAMPLE_BUFFER_SIZE".  
 
@@ -21,5 +21,5 @@ Since 1 / (80M / 4000 (prescaler)) * 1000 * 128 = 6.4, the data will be printed 
 ###################################################  
 
 #################### **Problem 6-3** ####################  
-Not yet completed, still working.  
+In this part, we choose D2 and D3 as pin1 and pin2, respectively. If the buffer is half-filled, toggle pin1; if the buffer is filled, toggle pin2.
 ###################################################  
