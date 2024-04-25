@@ -106,14 +106,14 @@ void ADC1_Init(void)
 }
 
 
-void Upper_Printed()
+void Lower_Printed()
 {
     for(int i = 0; i < SAMPLE_BUFFER_SIZE / 2; i++) {
         printf("%d\n", sample_buffer[i]);
     }
 }
 
-void Lower_Printed()
+void Upper_Printed()
 {
     for(int i = SAMPLE_BUFFER_SIZE / 2; i < SAMPLE_BUFFER_SIZE; i++) {
         printf("%d\n", sample_buffer[i]);
