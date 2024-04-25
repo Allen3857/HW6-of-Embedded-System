@@ -21,5 +21,7 @@ Since 1 / (80M / 4000 (prescaler)) * 1000 * 128 = 6.4, the data will be printed 
 ###################################################  
 
 #################### **Problem 6-3** ####################  
-In this part, we choose D2 and D3 as pin1 and pin2, respectively. If the buffer is half-filled, toggle pin1; if the buffer is filled, toggle pin2.
+In this part, we choose D2 and D3 as pin1 and pin2, respectively. If the buffer is half-filled, toggle pin1; if the buffer is filled, toggle pin2.  
+
+Note that after the buffer is full, use "BSP_AUDIO_IN_Stop" function and call the eventqueue.  
 ###################################################  
