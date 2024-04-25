@@ -9,6 +9,7 @@ To modify the sampling time of ADC, we can change the "sConfig.SamplingTime" ter
 
 Note that ADC_SAMPLETIME_XCYCLES_5 stands for "Sampling time X.5 ADC clock cycles", and the X value can be 2, 6, 12, 24, 47, 92, 247,or 640. For example, ADC_SAMPLETIME_2CYCLES_5 means "Sampling time 2.5 ADC clock cycles".  
 #########################################################  
+#################### **Problem 6-1** ####################
   
 #################### **Problem 6-2** ####################  
 For the first todo in function "HAL_ADC_ConvCpltCallback", we just write "event_queue.call(Upper_Printed);". The Upper_Printed function will print the data in buffer[128:255] when this part is fulled.  
